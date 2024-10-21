@@ -14,6 +14,7 @@ import { GET_LOGGED_USER } from './graphql/queries';
 import { UserContext } from './UserContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Layout from './components/Layout';
 
 
 const httpLink = createHttpLink({
@@ -72,7 +73,9 @@ function Main() {
     <UserContext.Provider value={user}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route element={<Layout onTokenChange={onTokenChange} />}>
+            <Route path="/" element={<Home />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
