@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   ApolloClient,
   InMemoryCache,
@@ -13,6 +14,7 @@ import { GET_LOGGED_USER } from './graphql/queries';
 import { UserContext } from './UserContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+
 
 const httpLink = createHttpLink({
   uri: API_URL,
