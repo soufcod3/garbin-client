@@ -41,22 +41,6 @@ const Register = () => {
       console.error("Signup failed", err);
     }
   };
-//   async function doSignup(e: any) {
-//     e.preventDefault(e);
-//     try {
-//       await doSignupMutation({
-//         variables: {
-//           data: {
-//             email: form.getValues().email,
-//             username: form.getValues().username,
-//             password: form.getValues().password,
-//           },
-//         },
-//       });
-//     } catch {}
-//   }
-
-
 
   if (user) {
     return <Navigate to="/" />;
