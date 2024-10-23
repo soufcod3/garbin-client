@@ -5,3 +5,13 @@ export interface IUser {
     username: string;
     role: string;
 }
+
+export interface IGarment {
+    id: number;
+    name: string;
+    colors: string[];
+    size: string;
+    brand: string;
+    category: string;
+    imageUrl: string;
+}

@@ -9,3 +9,16 @@ export const GET_LOGGED_USER = gql`
     }
   }
 `;
+
+export const GET_GARMENTS = gql`
+  query Garments {
+    garments {
+      id
+      name
+      brand
+      category
+      outfitIds
+      imageUrl
+    }
+  }
+`;

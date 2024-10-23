@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import Layout from './components/Layout';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import Wardrobe from './pages/Wardrobe/Wardrobe';
 
 
 const httpLink = createHttpLink({
@@ -78,7 +79,7 @@ function Main() {
             <Route path="/" element={<Home />} />
             <Route path="/creer-un-compte" element={<Register />} />
             <Route path="/connexion" element={<Login onTokenChange={onTokenChange} />} />
-
+            <Route path="/ma-garde-robe" element={<Wardrobe />} />
           </Route>
         </Routes>
       </BrowserRouter>
