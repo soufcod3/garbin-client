@@ -15,6 +15,7 @@ import { UserContext } from './UserContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './components/Layout';
+import Register from './pages/Register/Register';
 
 
 const httpLink = createHttpLink({
@@ -75,6 +76,7 @@ function Main() {
         <Routes>
           <Route element={<Layout onTokenChange={onTokenChange} />}>
             <Route path="/" element={<Home />} />
+            <Route path="/creer-un-compte" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -2,18 +2,33 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext";
+import { Dropdown } from "react-bootstrap";
 
-function Navbar(props: {
-  onTokenChange: () => void;
-}) {
+function Navbar(props: { onTokenChange: () => void }) {
   const user = useContext(UserContext);
 
   return (
     <nav className={styles.navbarmain}>
       <Link className={styles.linklogo} to={"/"}>
-        <img className={styles.logo} src="/logo512.png" alt="logo starBlog" />
+        <img className={styles.logo} src="/logo.png" alt="Logo de Garbin" />
       </Link>
+      {user && (
+        <>
+          <Link to={"/mes-tenues"}>Mes tenues</Link>
+          <Link to={"/ma-garde-robe"}>Ma garde-robe</Link>
+        </>
+      )}
+      <Dropdown>
+        <Dropdown.Toggle className={styles.dropdown} id="dropdown-basic">
+          {user ? user.username : <Link to={"creer-un-compte"}>Me connecter</Link>}
+        </Dropdown.Toggle>
 
+        <Dropdown.Menu>
+          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </nav>
   );
 }

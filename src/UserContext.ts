@@ -3,6 +3,7 @@ import { createContext } from "react";
 interface UserContextInterface {
   id: number;
   email: string;
+  username: string;
   password: string;
   role: string;
 }
