@@ -25,3 +25,16 @@ export const GET_LOGGED_USER = gql`
     }
   }
 `;
+
+export const CREATE_GARMENT = gql`
+  mutation CreateGarment($data: GarmentInput!) {
+    createGarment(data: $data) {
+      id
+      name
+      category
+      colors
+      outfitIds
+      imageUrl
+    }
+  }
+`;

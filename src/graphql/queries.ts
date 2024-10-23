@@ -16,6 +16,7 @@ export const GET_GARMENTS = gql`
       id
       name
       brand
+      colors
       category
       outfitIds
       imageUrl
