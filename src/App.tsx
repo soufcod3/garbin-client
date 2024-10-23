@@ -16,6 +16,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Layout from './components/Layout';
 import Register from './pages/Register/Register';
+import Login from './pages/Login/Login';
 
 
 const httpLink = createHttpLink({
@@ -57,7 +58,6 @@ function Main() {
     }
     try {
       const { data } = await refetch();
-      console.log('refetch user', user)
       setUser(data?.loggedUser);
     } catch (err: any) {
       if (err.message.includes("Access denied!")) {
@@ -77,6 +77,8 @@ function Main() {
           <Route element={<Layout onTokenChange={onTokenChange} />}>
             <Route path="/" element={<Home />} />
             <Route path="/creer-un-compte" element={<Register />} />
+            <Route path="/connexion" element={<Login onTokenChange={onTokenChange} />} />
+
           </Route>
         </Routes>
       </BrowserRouter>

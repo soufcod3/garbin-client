@@ -20,14 +20,18 @@ function Navbar(props: { onTokenChange: () => void }) {
       )}
       <Dropdown>
         <Dropdown.Toggle className={styles.dropdown} id="dropdown-basic">
-          {user ? user.username : <Link to={"creer-un-compte"}>Me connecter</Link>}
+          {user ? (
+            user.username
+          ) : (
+            <Link to={"/connexion"}>Me connecter</Link>
+          )}
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
+        {user && (
+          <Dropdown.Menu>
+            <Dropdown.Item onClick={() => props.onTokenChange()}>Se déconnecter</Dropdown.Item>
+          </Dropdown.Menu>
+        )}
       </Dropdown>
     </nav>
   );

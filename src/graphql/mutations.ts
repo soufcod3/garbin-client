@@ -7,3 +7,21 @@ export const CREATE_USER = gql`
     }
   }
 `;
+
+export const LOGIN = gql`
+  mutation Login($data: UserInput!) {
+    login(data: $data)
+  }
+`;
+
+export const GET_LOGGED_USER = gql`
+  query LoggedUser {
+    loggedUser {
+      id
+      email
+      username
+      password
+      role
+    }
+  }
+`;
